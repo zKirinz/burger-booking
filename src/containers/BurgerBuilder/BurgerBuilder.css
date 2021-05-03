@@ -1,0 +1,15 @@
+.Content {
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (min-width: 500px) and (min-height: 401px) {
+  .Content {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}

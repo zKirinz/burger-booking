@@ -1,0 +1,10 @@
+.Orders {
+  width: 100%;
+  margin-top: 72px;
+}
+
+.OrdersEmptyMessage {
+  text-align: center;
+  font-weight: 600;
+  font-size: large;
+}
