@@ -1,7 +1,7 @@
-# Burger Booking <img src="./src/assets/images/burger-logo.png" width="50" height="50" />
+# <img src="./src/assets/images/burger-logo.png" width="60" height="36" /> Burger Booking 
 A burger booking application that help you order the burger as you wish for.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and use [Redux](https://redux.js.org/), [Redux-Saga](https://redux-saga.js.org/) to manage states of the application.
 
 ## Available Scripts
 Before jump in to run this application, remember to replace `your_firebase_api_key` with your actual [Firebase](https://firebase.google.com/) API
