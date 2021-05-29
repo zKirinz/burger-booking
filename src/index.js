@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {BrowserRouter} from "react-router-dom";
-import {Provider} from "react-redux";
-import {createStore, applyMiddleware, compose, combineReducers} from "redux";
-import thunk from "redux-thunk";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
 
 import "./index.css";
@@ -13,7 +12,7 @@ import App from "./App";
 import burgerBuilderReducer from "./store/reducers/burgerBuilder";
 import orderReducer from "./store/reducers/order";
 import authReducer from "./store/reducers/auth";
-import {watchAuth, watchBurgerBuilder, watchOrder} from "./store/saga/index";
+import { watchAuth, watchBurgerBuilder, watchOrder } from "./store/saga/index";
 
 const composeEnhancers =
   process.env.NODE_ENV === "development"
@@ -30,7 +29,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(thunk, sagaMiddleware)),
+  composeEnhancers(applyMiddleware(sagaMiddleware))
 );
 
 sagaMiddleware.run(watchAuth);
@@ -45,7 +44,7 @@ ReactDOM.render(
       </BrowserRouter>
     </React.StrictMode>
   </Provider>,
-  document.getElementById("root"),
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
