@@ -4,14 +4,10 @@ const authApi = (type) => {
   let url;
   switch (type) {
     case authType.SIGNIN:
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" +
-        process.env.REACT_APP_API_KEY;
+      url = process.env.REACT_APP_SIGN_IN_API_URL;
       break;
     case authType.SIGNUP:
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" +
-        process.env.REACT_APP_API_KEY;
+      url = process.env.REACT_APP_SIGN_UP_API_URL;
       break;
     default:
       break;
@@ -27,4 +23,4 @@ const authType = {
   SIGNUP: "SIGNUP",
 };
 
-export {authApi, authType};
+export { authApi, authType };

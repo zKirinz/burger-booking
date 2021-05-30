@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const orderApi = axios.create({
-  baseURL: "https://burger-booking-react-default-rtdb.firebaseio.com/",
+  baseURL: process.env.REACT_APP_REALTIME_DB_API_URL,
 });
 
 export default orderApi;
