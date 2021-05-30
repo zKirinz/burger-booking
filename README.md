@@ -4,7 +4,9 @@ A burger booking application that help you order the burger as you wish for.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and use [Redux](https://redux.js.org/), [Redux-Saga](https://redux-saga.js.org/) to manage states of the application.
 
 ## Available Scripts
-Before jump in to run this application, remember to replace `your_firebase_api_key` with your actual [Firebase](https://firebase.google.com/) API
+Before jump in to run this application:
+- First, remember to create a `.env.local` file with content exactly like `.env.example` file content.
+- Then eplace  `your_firebase_api_key` with your actual [Firebase](https://firebase.google.com/) API.
 
 In the project directory, you can run:
 
