@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 Before jump in to run this application:
 - First, remember to create a `.env.local` file with content exactly like `.env.example` file content.
-- Then eplace  `your_firebase_api_key` with your actual [Firebase](https://firebase.google.com/) API.
+- Then replace  `your_firebase_sign_in_api`, `your_firebase_sign_up_api` and `your_firebase_realtime_db_api` with your  [Firebase](https://firebase.google.com/) API respectively.
 
 In the project directory, you can run:
 
