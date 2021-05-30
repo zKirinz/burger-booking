@@ -1,26 +1,32 @@
-import React, {useEffect, Suspense} from "react";
-import {Route, Switch, withRouter, Redirect} from "react-router-dom";
-import {connect} from "react-redux";
+import React, { useEffect, Suspense, useCallback } from "react";
+import { Route, Switch, withRouter, Redirect } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import Layout from "./hoc/Layout/Layout";
-import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
-import Logout from "./containers/Auth/Logout/Logout";
-import * as actions from "./store/actions/index";
+import BurgerBuilder from "./features/BurgerBuilder/BurgerBuilder";
+import Logout from "./features/Auth/Logout/Logout";
+import * as authActions from "./features/Auth/AuthSlice";
 
 const Checkout = React.lazy(() => {
-  return import("./containers/Checkout/Checkout");
+  return import("./features/Checkout/Checkout");
 });
 
 const Orders = React.lazy(() => {
-  return import("./containers/Orders/Orders");
+  return import("./features/Orders/Orders");
 });
 
 const Auth = React.lazy(() => {
-  return import("./containers/Auth/Auth");
+  return import("./features/Auth/Auth");
 });
 
 const App = (props) => {
-  const {onTryAutoSignup} = props;
+  const isAuthenticated = useSelector((state) => state.auth.token !== null);
+
+  const dispatch = useDispatch();
+  const onTryAutoSignup = useCallback(
+    () => dispatch(authActions.checkAuthState()),
+    [dispatch]
+  );
   useEffect(() => {
     onTryAutoSignup();
   }, [onTryAutoSignup]);
@@ -33,7 +39,7 @@ const App = (props) => {
     </Switch>
   );
 
-  if (props.isAuthenticated) {
+  if (isAuthenticated) {
     routes = (
       <Switch>
         <Route path="/checkout" render={(props) => <Checkout {...props} />} />
@@ -55,16 +61,4 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    isAuthenticated: state.auth.token !== null,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onTryAutoSignup: () => dispatch(actions.authCheckState()),
-  };
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(App);

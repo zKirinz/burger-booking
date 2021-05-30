@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useCallback} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import React, { useState, useEffect, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
@@ -10,7 +10,9 @@ import WithErrorHandler from "../../hoc/WithErrorHandler/WithErrorHandler";
 
 import classes from "./BurgerBuilder.css";
 import orderApi from "../../apis/order";
-import * as actions from "../../store/actions/index";
+import * as authActions from "../Auth/AuthSlice";
+import * as burgerBuilderActions from "./BurgerBuilderSlice";
+import * as orderActions from "../Orders/OrdersSlice";
 
 const BurgerBuilder = (props) => {
   const ings = useSelector((state) => state.burgerBuilder.ingredients);
@@ -20,20 +22,20 @@ const BurgerBuilder = (props) => {
 
   const dispatch = useDispatch();
   const onIngredientAdded = (ingName) =>
-    dispatch(actions.addIngredient(ingName));
+    dispatch(burgerBuilderActions.addIngredient(ingName));
   const onIngredientRemoved = (ingName) =>
-    dispatch(actions.removeIngredient(ingName));
+    dispatch(burgerBuilderActions.removeIngredient(ingName));
   const onInitIngredients = useCallback(
-    () => dispatch(actions.initIngredients()),
-    [dispatch],
+    () => dispatch(burgerBuilderActions.initIngredients()),
+    [dispatch]
   );
-  const onInitPurchase = () => dispatch(actions.purchaseInit());
-  const onSetAuthRedirectPath = (path) =>
-    dispatch(actions.setAuthRedirectPath(path));
-
   useEffect(() => {
     onInitIngredients();
   }, [onInitIngredients]);
+
+  const onInitPurchase = () => dispatch(orderActions.purchaseInit());
+  const onSetAuthRedirectPath = (path) =>
+    dispatch(authActions.setAuthRedirectPath(path));
 
   const [purchasing, setPurchasing] = useState(false);
 
@@ -75,7 +77,7 @@ const BurgerBuilder = (props) => {
 
   let orderSummary = null;
   let burger = error ? (
-    <p style={{textAlign: "center"}}>Ingredients can't be loaded!</p>
+    <p style={{ textAlign: "center" }}>Ingredients can't be loaded!</p>
   ) : (
     <Spinner />
   );
@@ -100,7 +102,7 @@ const BurgerBuilder = (props) => {
       <OrderSummary
         ingredients={ings}
         price={price}
-        purchaseCancelled={purchaseCancelHandler}
+        purchaseCanceled={purchaseCancelHandler}
         purchaseContinued={purchaseContinueHandler}
       />
     );

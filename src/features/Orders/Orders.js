@@ -1,5 +1,5 @@
-import React, {useEffect, useCallback} from "react";
-import {useSelector, useDispatch} from "react-redux";
+import React, { useEffect, useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import Order from "../../components/Order/Order";
 import WithErrorHandler from "../../hoc/WithErrorHandler/WithErrorHandler";
@@ -7,7 +7,7 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 
 import classes from "./Orders.css";
 import orderApi from "../../apis/order";
-import * as actions from "../../store/actions/index";
+import * as ordersActions from "../../features/Orders/OrdersSlice";
 
 const Orders = (props) => {
   const ordersList = useSelector((state) => state.order.orders);
@@ -17,8 +17,8 @@ const Orders = (props) => {
 
   const dispatch = useDispatch();
   const onFetchOrders = useCallback(
-    (token, userId) => dispatch(actions.fetchOrders(token, userId)),
-    [dispatch],
+    (token, userId) => dispatch(ordersActions.fetchOrders({ token, userId })),
+    [dispatch]
   );
 
   useEffect(() => {

@@ -1,13 +1,13 @@
-import React, {useState, useEffect, useCallback} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {Redirect} from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import Input from "../../components/UI/Input/Input";
 import Button from "../../components/UI/Button/Button";
 import Spinner from "../../components/UI/Spinner/Spinner";
 
 import classes from "./Auth.css";
-import * as actions from "../../store/actions/index";
+import * as authActions from "./AuthSlice";
 import checkValidity from "../../utils/checkValidity";
 import updateObject from "../../utils/updateObject";
 
@@ -20,10 +20,10 @@ const Auth = (props) => {
 
   const dispatch = useDispatch();
   const onAuth = (email, password, isSignup) =>
-    dispatch(actions.auth(email, password, isSignup));
+    dispatch(authActions.auth({ email, password, isSignup }));
   const onSetAuthRedirectPath = useCallback(
-    () => dispatch(actions.setAuthRedirectPath("/")),
-    [dispatch],
+    () => dispatch(authActions.setAuthRedirectPath("/")),
+    [dispatch]
   );
 
   const [authForm, setAuthForm] = useState({
@@ -70,7 +70,7 @@ const Auth = (props) => {
         value: event.target.value,
         valid: checkValidity(
           event.target.value,
-          authForm[controlName].validation,
+          authForm[controlName].validation
         ),
         touched: true,
       }),

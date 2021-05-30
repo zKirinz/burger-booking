@@ -1,14 +1,14 @@
-import React, {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import Button from "../../../components/UI/Button/Button";
 import Spinner from "../../../components/UI/Spinner/Spinner";
-import Input from "../../../components/UI//Input/Input";
+import Input from "../../../components/UI/Input/Input";
 import WithErrorHandler from "../../../hoc/WithErrorHandler/WithErrorHandler";
 
 import classes from "./ContactData.css";
 import orderApi from "../../../apis/order";
-import * as actions from "../../../store/actions/index";
+import * as ordersActions from "../../Orders/OrdersSlice";
 import checkValidity from "../../../utils/checkValidity";
 import updateObject from "../../../utils/updateObject";
 
@@ -21,7 +21,7 @@ const ContactData = (props) => {
 
   const dispatch = useDispatch();
   const onOrderBurger = (orderData, token) =>
-    dispatch(actions.purchaseBurger(orderData, token));
+    dispatch(ordersActions.purchaseBurger({ orderData, token }));
 
   const [orderForm, setOrderForm] = useState({
     name: {
@@ -97,8 +97,8 @@ const ContactData = (props) => {
       elementType: "select",
       elementConfig: {
         options: [
-          {value: "fastest", displayValue: "Fastest"},
-          {value: "cheapest", displayValue: "Cheapest"},
+          { value: "fastest", displayValue: "Fastest" },
+          { value: "cheapest", displayValue: "Cheapest" },
         ],
       },
       value: "fastest",
@@ -130,7 +130,7 @@ const ContactData = (props) => {
       value: event.target.value,
       valid: checkValidity(
         event.target.value,
-        orderForm[inputIdentifier].validation,
+        orderForm[inputIdentifier].validation
       ),
       touched: true,
     });
