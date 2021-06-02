@@ -1,7 +1,16 @@
 # <img src="./src/assets/images/burger-logo.png" width="60" height="36" /> Burger Booking 
+
+## [Live Demo](https://www.youtube.com/watch?v=CvsKmp0oAo4)
+## What is Burger Booking?
 A burger booking application that help you order the burger as you wish for.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and use [Redux-Toolkit](https://redux-toolkit.js.org/) to manage states of the application.
+## Technology
+- Frontend
+  - React - A JavaScript library for building user interfaces
+  - Create React App - React starter template
+  - Redux-Toolkit - State Management
+- Backend
+  - Firebase - Authentication, Realtime Database.
 
 **Note:** switch to branch `pure-redux` if you want to see this application managed by [Redux](https://redux.js.org/) and [Redux-Saga](https://redux-saga.js.org/).
 
