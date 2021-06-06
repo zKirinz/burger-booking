@@ -14,6 +14,12 @@ A burger booking application that help you order the burger as you wish for.
 
 **Note:** switch to branch `pure-redux` if you want to see this application managed by [Redux](https://redux.js.org/) and [Redux-Saga](https://redux-saga.js.org/).
 
+## Some preview images
+<img src="./docs/images/login.png" width="270" height="146" /><img src="./docs/images/burger-builder.png" width="270" height="146" /><img src="./docs/images/orders.png" width="270" height="146" />
+
+<img src="./docs/images/burger-builder-mobile.png" width="200" height="522" /><img src="./docs/images/orders-mobile.png" width="200" height="471" />
+
+
 ## Available Scripts
 Before jump in to run this application:
 - First, remember to create a `.env.local` file with content exactly like `.env.example` file content.
