@@ -15,11 +15,10 @@ A burger booking application that help you order the burger as you wish for.
 **Note:** switch to branch `pure-redux` if you want to see this application managed by [Redux](https://redux.js.org/) and [Redux-Saga](https://redux-saga.js.org/).
 
 ## Some preview images
-<img src="./docs/images/login.png" width="800" height="433" />
-<img src="./docs/images/burger-builder.png" width="800" height="433" />
-<img src="./docs/images/orders.png" width="800" height="433" />
-
-<img src="./docs/images/burger-builder-mobile.png" width="200" height="522" /><img src="./docs/images/orders-mobile.png" width="200" height="471" />
+<img src="./docs/images/login.png" width="400" height="217" />
+<img src="./docs/images/burger-builder.png" width="400" height="217" />
+<img src="./docs/images/orders.png" width="400" height="217" />
+<img src="./docs/images/burger-builder-mobile.png" width="160" height="420" /><img src="./docs/images/orders-mobile.png" width="160" height="377" />
 
 
 ## Available Scripts
