@@ -3,6 +3,9 @@
 ## [Live Demo](https://www.youtube.com/watch?v=CvsKmp0oAo4)
 ## What is Burger Booking?
 A burger booking application that help you order the burger as you wish for.
+The main purpose of this project is to practice React, Redux and Redux's support ecosystem with its best practice.
+Therefore, this application should be used for production because it's created to be quite simple so as for everyone easy to understand the workflow.
+You can consider using Burger Booking for produciton if only you improve it.
 
 ## Technology
 - Frontend
