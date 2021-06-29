@@ -10,7 +10,7 @@ You can consider using Burger Booking for produciton if only you improve it.
 ## Technology
 - Frontend
   - React - A JavaScript library for building user interfaces
-  - Create React App - React starter template
+  - Create React App - React Starter Template
   - Redux-Toolkit - State Management
 - Backend
   - Firebase - Authentication, Realtime Database.
