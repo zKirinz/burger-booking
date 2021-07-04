@@ -1,7 +1,26 @@
 # <img src="./src/assets/images/burger-logo.png" width="60" height="36" /> Burger Booking 
-A burger booking application that help you order the burger as you wish for.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and use [Redux](https://redux.js.org/), [Redux-Saga](https://redux-saga.js.org/) to manage states of the application.
+## [Live Demo](https://www.youtube.com/watch?v=CvsKmp0oAo4)
+## What is Burger Booking?
+- A burger booking application that help you order the burger as you wish for.
+- The main purpose of this project is to practice React, Redux and Redux's support ecosystem with its best practices.
+- Therefore, this application `shouldn't be used for production` because it's created to be quite simple so as for everyone easy to understand the workflow.
+You can consider using `Burger Booking` for produciton if only `you improve it`.
+
+## Technology
+- Frontend
+  - React - A JavaScript library for building user interfaces
+  - Create React App - React Starter Template
+  - Redux - State Management
+- Backend
+  - Firebase - Authentication, Realtime Database.
+
+**Note:** switch to branch `main` if you want to see this application managed by [Redux-Toolkit](https://redux-toolkit.js.org/) and [Redux-Thunk](https://github.com/reduxjs/redux-thunk).
+
+## Some preview images
+<img src="./docs/images/login.png" width="400" height="217" />&nbsp;<img src="./docs/images/burger-builder.png" width="400" height="217" />
+<img src="./docs/images/orders.png" width="400" height="217" />&nbsp;<img src="./docs/images/burger-builder-mobile.png" width="160" height="420" /><img src="./docs/images/orders-mobile.png" width="160" height="377" />
+
 
 ## Available Scripts
 Before jump in to run this application:
@@ -43,32 +62,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# License & copyright
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© Kirin Tran, FPT University TP.HCM
+Licensed under the [MIT LICENSE](LICENSE).
